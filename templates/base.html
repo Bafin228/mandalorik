@@ -5,12 +5,10 @@
     <title> САЙТ ДЛЯ НАСТОЯЩИХ МУЖЧИН </title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
-    <link href="{{ url_for('static', filename='css/style.css')}}" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.min.js" integrity="sha384-heAjqF+bCxXpCWLa6Zhcp4fu20XoNIA98ecBC1YkdXhszjoejr5y9Q77hIrv8R9i" crossorigin="anonymous"></script>
 </head>
 <body>
-    <audio src="dota5.mp3"></audio>
     <header>
         <nav class="navbar navbar-light bg-light">
             <h1 class="text-center">Советы dota 2</h1>
@@ -27,5 +25,15 @@
     <main role="main" class="container">
         {% block content %}{% endblock %}
     </main>
+    <audio autoplay id="myaudio" allow="autoplay">
+    <source src="{{ url_for('static', filename='sounds/dota5.mp3')}}" type="audio/mpeg">
+    </audio>
+    <script>
+        var first = true;
+        document.onclick = function(){
+          document.getElementById('myaudio').play();
+          first = false;
+        }
+    </script>
 </body>
 </html>

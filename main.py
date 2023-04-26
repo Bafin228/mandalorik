@@ -145,7 +145,6 @@ def edit_news(id):
 @app.route('/statik', methods=['GET', 'POST'])
 def statik():
     db_sess = db_session.create_session()
-    language = SelectField('ГОД', choices=[('cpp', '2022'), ('py', '2021'), ('text', '2020')])
     return render_template('statik.html')
 
 
